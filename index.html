@@ -1,1 +1,474 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PartEX — The exclusivity desk for Caribbean parts</title>
+  <meta name="description" content="PartEX is a Caribbean parts desk in the UK and Europe. We source excavator, heavy truck and car parts and confirm price and shipping before you order.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@360;480;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c0b09'/%3E%3Cpath d='M8 24V8h3.2l4.8 10.2L20.8 8H24v16h-2.4V12.2L17.2 24h-2.4l-4.4-11.8V24H8z' fill='%23c6a35e'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #0c0b09;
+      --bg-2: #141310;
+      --ink: #f4efe6;
+      --muted: #c9c0b2;
+      --gold: #c6a35e;
+      --gold-2: #e4cf9a;
+      --line: rgba(198, 163, 94, 0.38);
+      --line-soft: rgba(244, 239, 230, 0.1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Outfit, "Segoe UI", sans-serif;
+      font-weight: 360;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    a { color: var(--gold-2); }
+    .frame {
+      min-height: 100vh;
+      border: 1px solid var(--line);
+      margin: 10px;
+    }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .brand strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 0.18em;
+    }
+    .brand em {
+      font-style: normal;
+      color: var(--gold);
+      letter-spacing: 0.22em;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    nav { display: flex; gap: 18px; align-items: center; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    nav a:hover { color: var(--gold-2); }
+    .nav-wa {
+      color: #1a150c !important;
+      background: var(--gold);
+      padding: 10px 14px;
+      letter-spacing: 0.08em !important;
+    }
+    .nav-wa:hover { background: var(--gold-2); }
+    .hero { padding: 54px 0 28px; }
+    .kicker {
+      margin: 0 0 18px;
+      color: var(--gold);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    h1 {
+      margin: 0;
+      max-width: 12ch;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(46px, 8vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+    }
+    .rule {
+      width: 72px;
+      height: 1px;
+      background: var(--gold);
+      margin: 26px 0 20px;
+      border: 0;
+    }
+    .lede {
+      max-width: 40rem;
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      text-decoration: none;
+      background: var(--gold);
+      color: #1a150c;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .btn:hover { background: var(--gold-2); color: #1a150c; }
+    .btn-line {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      font-weight: 480;
+    }
+    .btn-line:hover { border-color: var(--gold); color: var(--gold-2); background: transparent; }
+    .fine { margin: 16px 0 0; color: var(--muted); font-size: 14px; }
+    section { padding: 42px 0 8px; }
+    .sec-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      margin-bottom: 18px;
+    }
+    h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -0.02em;
+    }
+    .sec-note { margin: 0; max-width: 36rem; color: var(--muted); }
+    .lane {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px 18px;
+      padding: 22px 0;
+      border-top: 1px solid var(--line-soft);
+    }
+    .lane:first-of-type { border-top: 0; }
+    .num {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: var(--gold);
+      font-size: 34px;
+      line-height: 1;
+    }
+    .lane h3 {
+      margin: 0 0 6px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 28px;
+    }
+    .lane p, .part p, .step p { margin: 0; color: var(--muted); }
+    .parts { border-top: 1px solid var(--line-soft); }
+    .part {
+      display: grid;
+      grid-template-columns: minmax(0, 16rem) 1fr;
+      gap: 8px 28px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .part h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .places {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .places li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line-soft);
+      letter-spacing: 0.04em;
+    }
+    .steps { margin: 0; padding: 0; list-style: none; }
+    .step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 8px 14px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line-soft);
+    }
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .close {
+      margin: 48px 0 28px;
+      padding: 28px 0 8px;
+      border-top: 1px solid var(--gold);
+    }
+    .phone {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(36px, 6vw, 56px);
+      margin: 8px 0 16px;
+      line-height: 1;
+    }
+    .phone a { color: var(--ink); text-decoration: none; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 18px 0 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot { display: flex; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; }
+    .spacer { height: 72px; }
+    @media (min-width: 860px) {
+      .frame { margin: 18px; }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 40px;
+        align-items: end;
+      }
+      .aside {
+        border-left: 1px solid var(--line);
+        padding: 8px 0 8px 28px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .aside p { margin: 0 0 14px; }
+      .lanes-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+      }
+      .lane {
+        grid-template-columns: 1fr;
+        padding: 8px 22px 8px 0;
+        border-top: 0;
+        border-right: 1px solid var(--line-soft);
+      }
+      .lane:last-child { border-right: 0; padding-right: 0; }
+      .places { grid-template-columns: repeat(3, 1fr); }
+      .places li { padding-right: 16px; }
+      .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+      .step { border-top: 0; padding-right: 22px; align-content: start; }
+    }
+    @media (max-width: 720px) {
+      .hide-sm { display: none; }
+      nav a.nav-wa { display: none; }
+      .part { grid-template-columns: 1fr; gap: 4px; }
+      .dock {
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(12, 11, 9, 0.94);
+        border-top: 1px solid var(--line);
+      }
+      .dock a { width: 100%; }
+    }
+    @media (min-width: 721px) { .dock { display: none; } .spacer { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="wrap">
+      <header>
+        <a class="brand" href="#top">
+          <strong>PARTEX</strong>
+          <em>Desk</em>
+        </a>
+        <nav aria-label="Page">
+          <a class="hide-sm" href="#lanes">Lanes</a>
+          <a class="hide-sm" href="#parts">Parts</a>
+          <a class="hide-sm" href="#coverage">Coverage</a>
+          <a class="hide-sm" href="#how">How it works</a>
+          <a class="nav-wa" href="https://wa.me/447343123090">WhatsApp</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero hero-grid">
+          <div>
+            <p class="kicker">Caribbean parts · UK and Europe</p>
+            <h1>The exclusivity desk for Caribbean parts.</h1>
+            <hr class="rule">
+            <p class="lede">PartEX is a sourcing desk for machines and vehicles used across the Caribbean. We look in the UK and Europe, then confirm price and shipping before you order. This page is not a catalogue.</p>
+            <div class="actions">
+              <a class="btn" href="https://wa.me/447343123090">WhatsApp +44 7343 123090</a>
+              <a class="btn btn-line" href="#how">What to send</a>
+            </div>
+            <p class="fine">No stock list, prices, part numbers or delivery dates are published here.</p>
+          </div>
+          <aside class="aside">
+            <p>One desk. Three lanes. Every enquiry is checked against the machine or vehicle you describe.</p>
+            <p>Send a VIN, model year, left-hand or right-hand drive, or a photo of the data plate.</p>
+            <p><a href="https://www.facebook.com/profile.php?id=61595006221191">PartEX on Facebook</a></p>
+          </aside>
+        </section>
+
+        <section id="lanes">
+          <div class="sec-head">
+            <h2>Three lanes</h2>
+            <p class="sec-note">Tell us the machine. We source to that description. Nothing here is an offer of stock.</p>
+          </div>
+          <div class="lanes-3">
+            <article class="lane">
+              <div class="num">01</div>
+              <div>
+                <h3>Excavators and plant</h3>
+                <p>Hydraulic and drivetrain parts for excavators and other plant. A model and a data-plate photo keep the enquiry on the right machine.</p>
+              </div>
+            </article>
+            <article class="lane">
+              <div class="num">02</div>
+              <div>
+                <h3>Heavy trucks</h3>
+                <p>Engine, hub and steering parts for heavy trucks, including Volvo, Renault, DAF and Scania when that is the vehicle in front of you.</p>
+              </div>
+            </article>
+            <article class="lane">
+              <div class="num">03</div>
+              <div>
+                <h3>Prestige and everyday cars</h3>
+                <p>Brake and service parts for prestige cars and everyday cars. VIN, model year and left- or right-hand drive keep the search accurate.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="parts">
+          <div class="sec-head">
+            <h2>What the parts do</h2>
+            <p class="sec-note">Examples of parts people ask us to find. Each line is only what the part does. Not a stock list, and not a part number.</p>
+          </div>
+          <div class="parts">
+            <article class="part">
+              <h3>Excavator hydraulic pump</h3>
+              <p>It turns engine power into oil flow that moves the boom, arm and attachments.</p>
+            </article>
+            <article class="part">
+              <h3>Final drive</h3>
+              <p>It reduces travel-motor speed so the tracks or wheels can pull the machine.</p>
+            </article>
+            <article class="part">
+              <h3>Main control valve</h3>
+              <p>It directs hydraulic oil to the function the operator selects.</p>
+            </article>
+            <article class="part">
+              <h3>Truck turbo</h3>
+              <p>It uses exhaust flow to drive a compressor that forces more air into the engine.</p>
+            </article>
+            <article class="part">
+              <h3>Turbo housing</h3>
+              <p>It is the casing that contains the turbo and directs exhaust or intake air through it.</p>
+            </article>
+            <article class="part">
+              <h3>Wheel hub bearing</h3>
+              <p>On Volvo, Renault, DAF and Scania trucks, it lets the wheel turn on the axle while carrying the vehicle’s weight.</p>
+            </article>
+            <article class="part">
+              <h3>Kingpin set</h3>
+              <p>It is the pivot hardware in a steered axle that lets the wheels turn left and right.</p>
+            </article>
+            <article class="part">
+              <h3>Prestige brake caliper</h3>
+              <p>It clamps the pads against the disc when the brake is applied.</p>
+            </article>
+            <article class="part">
+              <h3>Car alternator</h3>
+              <p>It is driven by the engine to charge the battery and feed the car’s electrical system.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="coverage">
+          <div class="sec-head">
+            <h2>Caribbean coverage</h2>
+            <p class="sec-note">Sourcing stays in the UK and Europe. Shipping is arranged to the Caribbean, including these places. The cost of that shipping is confirmed before you order.</p>
+          </div>
+          <ul class="places">
+            <li>Trinidad and Tobago</li>
+            <li>Guyana</li>
+            <li>Jamaica</li>
+            <li>Barbados</li>
+            <li>Puerto Rico</li>
+            <li>Dominican Republic</li>
+            <li>The Bahamas</li>
+            <li>Suriname</li>
+            <li>Belize</li>
+            <li>Haiti</li>
+            <li>St Lucia</li>
+            <li>Grenada</li>
+            <li>Antigua</li>
+          </ul>
+        </section>
+
+        <section id="how">
+          <div class="sec-head">
+            <h2>How it works</h2>
+            <p class="sec-note">A short enquiry. A real check. A price and a shipping figure before anything is ordered.</p>
+          </div>
+          <ol class="steps">
+            <li class="step">
+              <div class="num">01</div>
+              <div>
+                <strong>Send the identity</strong>
+                <p>WhatsApp the VIN, the model year, whether it is left-hand or right-hand drive, or a photo of the data plate.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="num">02</div>
+              <div>
+                <strong>We check UK and Europe</strong>
+                <p>We look for a match to that machine or vehicle. If we cannot match it, we say so.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="num">03</div>
+              <div>
+                <strong>You confirm, then you order</strong>
+                <p>We confirm price and shipping before you order. Nothing moves on a guess.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="close" id="enquiry">
+          <p class="kicker">WhatsApp the desk</p>
+          <h2>Send the plate, not a guess.</h2>
+          <p class="phone"><a href="https://wa.me/447343123090">+44 7343 123090</a></p>
+          <div class="actions">
+            <a class="btn" href="https://wa.me/447343123090">Open WhatsApp</a>
+            <a class="btn btn-line" href="https://www.facebook.com/profile.php?id=61595006221191">Facebook page</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="foot">
+          <div>PartEX. A Caribbean parts desk in the UK and Europe.</div>
+          <div><a href="https://wa.me/447343123090">WhatsApp +44 7343 123090</a> · <a href="https://www.facebook.com/profile.php?id=61595006221191">Facebook</a></div>
+        </div>
+      </footer>
+      <div class="spacer"></div>
+    </div>
+  </div>
+  <div class="dock">
+    <a class="btn" href="https://wa.me/447343123090">WhatsApp +44 7343 123090</a>
+  </div>
+</body>
+</html>
